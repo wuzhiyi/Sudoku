@@ -15,8 +15,8 @@
  **************************************************************/
 #include <stdlib.h>
 #include <stdio.h>
-#define MMAX 9
-char M[MMAX][MMAX] = {{0}};
+#define MAX 9
+char M[MAX][MAX] = {{0}};
 int count = 0;
 
 int getblockid(int row, int col){
@@ -32,17 +32,17 @@ void getnext(int *row, int *col, int* nrow, int* ncol){
         *ncol = (*col) +1;
     }
 }
-void outputmatrix(char mtr[MMAX][MMAX] ){
+void outputmatrix(char mtr[MAX][MAX] ){
     int i, j;
-    for(i=0;i<MMAX;i++){
-        for(j = 0; j<MMAX;j++){
+    for(i=0;i<MAX;i++){
+        for(j = 0; j<MAX;j++){
             printf("%d ", mtr[i][j]);
         }
         printf ( "\n" );
     }
 }
 
-void fill(int row, int col, char matrix[MMAX][MMAX], char rowd[][MMAX], char cold[][MMAX], char blod[][MMAX]){
+void fill(int row, int col, char matrix[MAX][MAX], char rowd[][MAX], char cold[][MAX], char blod[][MAX]){
     count ++;
     if(matrix[row][col] != 0){
         if(row == 8 && col == 8){
@@ -55,8 +55,8 @@ void fill(int row, int col, char matrix[MMAX][MMAX], char rowd[][MMAX], char col
         return;
     }
     int i = 1;
-    char mtr[MMAX][MMAX];
-    memcpy(mtr, matrix, MMAX*MMAX*sizeof(char));
+    char mtr[MAX][MAX];
+    memcpy(mtr, matrix, MAX*MAX*sizeof(char));
     
     for(;i<= 9;i++){
         //duplicate all data
@@ -90,10 +90,10 @@ void fill(int row, int col, char matrix[MMAX][MMAX], char rowd[][MMAX], char col
     }
 }
 
-void trackfixedcell(char fixmtr[MMAX][MMAX], char r[MMAX][MMAX],char c[MMAX][MMAX],char b[MMAX][MMAX]){
+void trackfixedcell(char fixmtr[MAX][MAX], char r[MAX][MAX],char c[MAX][MAX],char b[MAX][MAX]){
     int row,col;
-    for(row = 0; row<MMAX; row++){
-        for(col= 0; col<MMAX; col++){
+    for(row = 0; row<MAX; row++){
+        for(col= 0; col<MAX; col++){
             if(fixmtr[row][col]!= 0){
                 r[row][(int)fixmtr[row][col]-1] = 1;
                 c[col][(int)fixmtr[row][col]-1] = 1;
@@ -102,11 +102,11 @@ void trackfixedcell(char fixmtr[MMAX][MMAX], char r[MMAX][MMAX],char c[MMAX][MMA
         }
     }
 }
-void readfixed(char mtr[MMAX][MMAX], char* input){
+void readfixed(char mtr[MAX][MAX], char* input){
     int i = 0;
-    for(;i<MMAX*MMAX;i++){
-        int row = i/MMAX;
-        int col = i%MMAX;
+    for(;i<MAX*MAX;i++){
+        int row = i/MAX;
+        int col = i%MAX;
         if(input[i] != '0'){
             mtr[row][col] = input[i]-48;
         }
@@ -116,9 +116,9 @@ void readfixed(char mtr[MMAX][MMAX], char* input){
 int main ( int argc, char *argv[] )
 {
     char * fixed = "045000000000000030600030807700004680000006005003000070021000456000010000480000000";
-    char r[MMAX][MMAX] = {{0}};
-    char c[MMAX][MMAX] = {{0}};
-    char b[MMAX][MMAX] = {{0}};
+    char r[MAX][MAX] = {{0}};
+    char c[MAX][MAX] = {{0}};
+    char b[MAX][MAX] = {{0}};
     readfixed(M,fixed);
     trackfixedcell(M,r,c,b);
     fill(0,0,M,r,c,b);
