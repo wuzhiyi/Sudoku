@@ -29,6 +29,7 @@ void Print(int a[N][N]) {
     }
 }
 
+//判断函数
 //判断第 i 行, 第 j 列的数设为 k 是否合理
 int Check(int a[N][N], int i, int j, int k) {
     int m, n;
@@ -55,20 +56,21 @@ int Check(int a[N][N], int i, int j, int k) {
 void Sudoku(int a[N][N], int n){
     int temp[N][N];
     int i,j;
-    for (i=0; i<9; i++) {
-        for (j=0; j<9; j++) temp[i][j] = a[i][j];
+    for (i=0; i<N; i++) {
+        for (j=0; j<N; j++) temp[i][j] = a[i][j];   //将原始数据赋值给临时数组temp
     }
     i = n/N; j = n%N;   //求出第 n 个数的行数和列数
     if (a[i][j] != 0) { //已经有原始数据
-        if (n == 80) Print(temp);   //数组最后一位，输出
-        else Sudoku(temp, n+1);     //不是数组最后一位，求下一个数
+        if (n == N*N-1) Print(temp);    //数组最后一位，输出
+        else Sudoku(temp, n+1);         //不是数组最后一位，求下一个数
     }
-    else {  //没有原始数据
-        for (int k=1; k<=9; k++) {
+    else {  //a[i][j]=0, 即没有原始数据
+            //以下 for 循环为核心语句，内嵌k递增与Sudoku递归
+        for (int k=1; k<=N; k++) {
             int flag = Check(temp, i, j, k);
             if (flag) {         //第 i 行, 第 j 列可以是 k
                 temp[i][j] = k; //设为 k
-                if (n == 80) Print(temp);
+                if (n == N*N-1) Print(temp);
                 else Sudoku(temp, n+1);
                 temp[i][j] = 0; //恢复为0，判断下一个k
             }
@@ -91,4 +93,5 @@ int main() {
                      0,0,1, 0,7,6, 3,0,0,};
     Print(arr);
     Sudoku(arr, 0);
+    return 0;
 }
