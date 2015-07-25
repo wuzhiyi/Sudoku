@@ -2,7 +2,7 @@
  * Copyright (c) Wuzhiyi
  * Introduction to Algorithms
  *
- * 题目:  Sodoku
+ * 题目:  Sudoku
  * 名称:  数独求解器
  * 作者:  wuzhiyi
  * 语言:  c
