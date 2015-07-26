@@ -2,7 +2,7 @@
  * Copyright (c) Wuzhiyi
  * Introduction to Algorithms
  *
- * 题目:  SS3.0_Unique.c
+ * 题目:  SS_Unique.c
  * 名称:  唯一解函数
  * 作者:  wuzhiyi
  * 语言:  c
