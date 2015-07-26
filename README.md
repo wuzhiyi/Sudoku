@@ -4,8 +4,8 @@
 
 ####Human Algorithm
 _Note_:
-* [Sudoku.md](https://github.com/wuzhiyi/Sudoku/blob/master/Sudoku.md): 参考日志
-* [Unique.c](https://github.com/wuzhiyi/Sudoku/blob/master/Unique.c): 唯一求解函数
+* 参考日志：[Sudoku.md](https://github.com/wuzhiyi/Sudoku/blob/master/Sudoku.md)
+* 唯一求解函数：[Unique.c](https://github.com/wuzhiyi/Sudoku/blob/master/Unique.c)
 * 区块求解函数
 * 数对删减函数
 * 隐性数对删减函数
