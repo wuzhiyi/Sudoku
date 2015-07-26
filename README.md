@@ -7,7 +7,7 @@
 ####Computer Algorithm
 [Sudoku Solver v1.0](https://github.com/wuzhiyi/Sudoku/blob/master/Sudoku_Solver_v1.0.c)</br>
 [Sudoku Solver v2.0](https://github.com/wuzhiyi/Sudoku/blob/master/Sudoku_Solver_v2.0.c)</br>
-Note:
+_Note_:
 * 输入原始数据，储存在初始化矩阵中
 * 主要结构：主函数 + 数独函数 + 输出函数 + 判断函数
 * 判断函数：分别判断行 + 列 + 宫
