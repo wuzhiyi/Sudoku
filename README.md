@@ -1,6 +1,4 @@
-##Sudoku
-###求解器 Solver
----
+##求解器 Solver
 
 ####Human Algorithm
 _Note_:
@@ -22,8 +20,8 @@ _Note_:
 * 判断函数：分别判断行 + 列 + 宫
 * 数独函数的核心语句：k递增与数独函数的递归，即对没有原始数据的位置初始化取 k=1，判断合理性，如成立，初始化下一位，直到合理性不成立，返回，k+1.
 
-###生成器 Generator
----
+##生成器 Generator
+
 
 ##LICENSE
 The MIT License (MIT)
