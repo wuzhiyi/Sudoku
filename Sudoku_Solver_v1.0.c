@@ -115,6 +115,7 @@ void readfixed(char mtr[MAX][MAX], char* input){
 
 int main ( int argc, char *argv[] )
 {
+    //输入待求解数组
     char * fixed = "045000000000000030600030807700004680000006005003000070021000456000010000480000000";
     char r[MAX][MAX] = {{0}};
     char c[MAX][MAX] = {{0}};
